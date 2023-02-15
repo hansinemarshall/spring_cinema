@@ -35,4 +35,17 @@ public class MovieService {
         movieRepository.save(movie);
         return new Reply("New movie added");
     }
+
+    public void removeMovie(int id){
+        movieRepository.deleteById(id);
+    }
+
+    public Reply updateMovieTitle (int id, String newTitle){
+        getMovieById(id).setTitle(newTitle);
+        return new Reply("Movie updated");
+    }
+
+
+
+
 }
